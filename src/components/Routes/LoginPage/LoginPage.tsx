@@ -1,19 +1,20 @@
-import React, { useState } from "react";
+import React, { useRef } from "react";
 import { TextField, Paper, Button } from "@mui/material";
 import "./LoginPage.css"
 
 function LoginPage() {
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
+    const usernameRef = useRef(null);
+    const passwordRef = useRef(null);
 
     const onSignIn = () => {
 
     }
+
     return (
         <div style={{ height: "100%", width: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
             <Paper style={{ padding: 20, display: "flex", flexDirection: "column", justifyContent: "space-evenly" }}>
                 <TextField
-                    onChange={(e) => setUsername(e.currentTarget.value)}
+                    ref={usernameRef}
                     className="input-field"
                     label="Username"
                     InputLabelProps={{
@@ -21,7 +22,7 @@ function LoginPage() {
                     }}
                 />
                 <TextField
-                    onChange={(e) => setPassword(e.currentTarget.value)}
+                    ref={passwordRef}
                     className="input-field"
                     label="Password"
                     type="password"
@@ -29,10 +30,8 @@ function LoginPage() {
                         shrink: true,
                     }}
                 />
-                <div>
-                    <Button>Sign in</Button>
-                    sign up
-                </div>
+                <Button>Gett in</Button>
+                <Button size="small">Gett new Account</Button>
             </Paper>
         </div>
     )
