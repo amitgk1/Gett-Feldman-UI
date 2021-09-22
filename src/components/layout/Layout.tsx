@@ -1,21 +1,23 @@
 import React from "react";
-import {Switch, Route, BrowserRouter} from "react-router-dom";
+import { Switch, Route, BrowserRouter } from "react-router-dom";
 import CreateNewRide from "../Routes/CreateNewRide";
-import HomePage from "../Routes/HomePage";
+import LoginPage from "../Routes/LoginPage/LoginPage";
 import RidePage from "../Routes/RidePage";
-import Navbar from "./Navbar/Navbar";
+import Navbar from "./Navbar/NavBar";
 
-export default function Layout() {
+function Layout() {
     return (
-        <div>
-            <Navbar/>
+        <div style={{ width: "100vw", height: "100vh" }}>
+            <Navbar />
             <BrowserRouter>
                 <Switch>
-                    <Route exact path="/" component={HomePage}/>
-                    <Route path="/addRide" component={CreateNewRide}/>
-                    <Route path="/ride/:id" component={RidePage}/>
+                    <Route exact path="/" component={LoginPage} />
+                    <Route path="/addRide" component={CreateNewRide} />
+                    <Route path="/ride/:id" component={RidePage} />
                 </Switch>
             </BrowserRouter>
         </div>
     );
 }
+
+export default Layout;
