@@ -1,8 +1,8 @@
 import React from "react";
 import {Switch, Route} from "react-router-dom";
-import HomePage from "../HomePage";
-import CreateNewRide from "../CreateNewRide";
-import RidePage from "../RidePage";
+import CreateNewRide from "../Routes/CreateNewRide";
+import HomePage from "../Routes/HomePage";
+import RidePage from "../Routes/RidePage";
 
 
 function Layout() {
