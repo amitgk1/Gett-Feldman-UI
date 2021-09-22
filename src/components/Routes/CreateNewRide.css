@@ -1,0 +1,19 @@
+.dropdown-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.confirm{
+    left: 8.97%;
+    right: 10.26%;
+    top: 11.63%;
+    bottom: 4.65%;
+    font-family: Varela Round;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 36px;
+
+    color: #000000;
+    border-radius: 16px;
+}
