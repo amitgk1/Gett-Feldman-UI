@@ -1,9 +1,9 @@
 import React from "react";
 import Dropdown from "../dropdown/Dropdown";
-import './CreateNewRide.css';
+import './JoinRide.css';
 import {Button} from "@mui/material";
 
-function CreateNewRide(){
+function JoinRide(){
 
     const ToFromOptions = [{name:'To', value:'To'},{name:'From', value:'From'}]
     const ToFromTitle = 'To/From';
@@ -35,4 +35,4 @@ function CreateNewRide(){
     )
 }
 
-export default CreateNewRide;
+export default JoinRide;
