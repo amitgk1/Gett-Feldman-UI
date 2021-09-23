@@ -4,7 +4,7 @@ import { ROUTES } from "../../common-constants";
 import LoginPage from "../Routes/LoginPage/LoginPage";
 import RidePage from "../Routes/RidePage";
 import Signup from "../Routes/Signup/Signup";
-import Navbar from "./Navbar/NavBar";
+import Navbar from "./Navbar/Navbar";
 import MyOrders from "../orders/MyOrders";
 
 function Layout() {
@@ -15,7 +15,7 @@ function Layout() {
                 <Switch>
                     <Route exact path={ROUTES.login} component={LoginPage} />
                     <Route exact path={ROUTES.signup} component={Signup} />
-                    <Route path={ROUTES.addRide} component={CreateNewRide} />
+                    <Route path={ROUTES.myRides} component={MyOrders} />
                     <Route path={ROUTES.rideById} component={RidePage} />
                 </Switch>
             </BrowserRouter>
