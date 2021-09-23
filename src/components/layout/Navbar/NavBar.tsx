@@ -9,12 +9,12 @@ import logo from '../../../images/GettFeldman.png';
 
 export default function Navbar() {
     return (
-        <Box sx={{flexGrow: 1}}>
+        <Box>
             <AppBar position="static">
 
                 <Toolbar>
-                    <img src={logo} alt="Logo" className="logo"/>
-                    <Typography variant="h6" component="div" sx={{flexGrow: 1}}>
+                    <img src={logo} alt="Logo" className="logo" />
+                    <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                         <Button color="inherit" size="large">Order</Button>
                         <Button color="inherit" size="large">Time Table</Button>
                         <Button color="inherit" size="large">Print</Button>

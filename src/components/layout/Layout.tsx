@@ -4,8 +4,8 @@ import { ROUTES } from "../../common-constants";
 import LoginPage from "../Routes/LoginPage/LoginPage";
 import RidePage from "../Routes/RidePage";
 import Signup from "../Routes/Signup/Signup";
-import Navbar from "./Navbar/Navbar";
 import MyOrders from "../orders/MyOrders";
+import Navbar from "./Navbar/NavBar";
 
 function Layout() {
     return (
