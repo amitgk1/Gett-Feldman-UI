@@ -1,14 +1,15 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { TextField, Paper, Button } from "@mui/material";
 import "./LoginPage.css"
 import { useHistory } from "react-router";
 import { ROUTES } from "../../../common-constants";
 import FormWrapper from "../../FormWrapper/FormWrapper";
 import FormTextInput from "../../FormInput/FormTextInput/FormTextInput";
+import { getValue } from "../../../utils/event";
 
 function LoginPage() {
-    const usernameRef = useRef(null);
-    const passwordRef = useRef(null);
+    const [username, setUsername] = useState<string>("");
+    const [password, setPassword] = useState<string>("");
     const history = useHistory();
 
     const onSignIn = () => {
@@ -21,8 +22,8 @@ function LoginPage() {
 
     return (
         <FormWrapper>
-            <FormTextInput ref={usernameRef} label="Username" />
-            <FormTextInput ref={passwordRef} label="Password" />
+            <FormTextInput onChange={(e) => setUsername(getValue(e))} label="Username" />
+            <FormTextInput onChange={(e) => setPassword(getValue(e))} label="Password" />
             <Button>Gett in</Button>
             <Button size="small" onClick={onSignUp}>Gett new Account</Button>
         </FormWrapper>

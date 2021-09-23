@@ -8,6 +8,7 @@ import Button from '@mui/material/Button';
 interface dropdownInformation {
     title: string,
     options: DropdownOption[]
+    onChange?: (value: string | number) => any;
 }
 
 interface DropdownOption {
@@ -23,6 +24,7 @@ export default function Dropdown(props: dropdownInformation) {
 
     const handleChange = (event: SelectChangeEvent<typeof option>) => {
         setOption(event.target.value);
+        props.onChange && props.onChange(event.target.value);
     };
 
     const handleClose = () => {

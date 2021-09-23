@@ -6,12 +6,13 @@ import "./FormTextInput.css"
 interface FormTextInputProps {
     label: string;
     className?: string;
+    onChange: (event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => any;
 }
 
-const FormTextInput = React.forwardRef<HTMLDivElement, FormTextInputProps>(({ className, label }, ref) => {
+const FormTextInput = ({ className, label, onChange }: FormTextInputProps) => {
     return (
         <TextField
-            ref={ref}
+            onChange={(e) => { console.log(e.target.value); onChange(e) }}
             className={classnames("input-field", className)}
             label={label}
             InputLabelProps={{
@@ -19,6 +20,6 @@ const FormTextInput = React.forwardRef<HTMLDivElement, FormTextInputProps>(({ cl
             }}
         />
     )
-})
+}
 
 export default FormTextInput;
