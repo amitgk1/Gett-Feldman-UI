@@ -14,7 +14,7 @@ function Layout() {
             <BrowserRouter>
                 <Switch>
                     <Route exact path={ROUTES.login} component={LoginPage} />
-                    <Route path="/addRide" component={CreateNewRide} />
+                    <Route exact path={ROUTES.signup} component={Signup} />
                     <Route path={ROUTES.addRide} component={CreateNewRide} />
                     <Route path={ROUTES.rideById} component={RidePage} />
                 </Switch>
