@@ -1,9 +1,10 @@
 import React, { useRef } from "react";
 import { TextField, Paper, Button } from "@mui/material";
 import { useHistory } from "react-router";
-import { ROUTES } from "../../../common-constants";
+import { COURSES, ROLES, ROUTES } from "../../../common-constants";
 import FormWrapper from "../../FormWrapper/FormWrapper";
 import FormTextInput from "../../FormInput/FormTextInput/FormTextInput";
+import Dropdown from "../../dropdown/Dropdown";
 
 const Signup = () => {
     const usernameRef = useRef(null);
@@ -16,8 +17,9 @@ const Signup = () => {
             <FormTextInput ref={usernameRef} label="Username" />
             <FormTextInput ref={passwordRef} label="Password" />
             <FormTextInput ref={nameRef} label="Name" />
-            <Button>Gett in</Button>
-            {/* <Button size="small" onClick={onSignUp}>Gett new Account</Button> */}
+            <Dropdown title="Course" options={COURSES.map(course => ({ name: course, value: course }))} />
+            <Dropdown title="Role" options={ROLES.map(role => ({ name: role, value: role }))} />
+            <Button>Gett Account</Button>
         </FormWrapper>
     )
 }
