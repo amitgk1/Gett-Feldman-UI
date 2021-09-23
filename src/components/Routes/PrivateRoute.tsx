@@ -1,10 +1,9 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import { Route, RouteProps } from 'react-router';
-import { UserRef } from '../../context/user';
 import LoginPage from './LoginPage/LoginPage';
 
 function PrivateRoute(props: RouteProps) {
-    const user = useRef(UserRef);
+    const user = true
     return user ? <Route {...props} /> : <LoginPage />
 }
 

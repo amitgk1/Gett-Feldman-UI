@@ -1,11 +1,12 @@
-import React, { useRef, useState } from "react";
-import { TextField, Paper, Button } from "@mui/material";
-import "./LoginPage.css"
+import React, { useState } from "react";
+import { Button } from "@mui/material";
 import { useHistory } from "react-router";
 import { ROUTES } from "../../../common-constants";
 import FormWrapper from "../../FormWrapper/FormWrapper";
 import FormTextInput from "../../FormInput/FormTextInput/FormTextInput";
 import { getValue } from "../../../utils/event";
+import axios from "axios";
+import "./LoginPage.css"
 
 function LoginPage() {
     const [username, setUsername] = useState<string>("");
@@ -13,7 +14,14 @@ function LoginPage() {
     const history = useHistory();
 
     const onSignIn = () => {
-        // TODO: send to server
+        axios.post("http://192.168.126.41:5000/Login", {
+            username,
+            password
+        }).then(res => {
+            if (res.data) {
+                history.push(ROUTES.myRides);
+            }
+        })
     }
 
     const onSignUp = () => {
@@ -24,7 +32,7 @@ function LoginPage() {
         <FormWrapper>
             <FormTextInput onChange={(e) => setUsername(getValue(e))} label="Username" />
             <FormTextInput onChange={(e) => setPassword(getValue(e))} label="Password" />
-            <Button>Gett in</Button>
+            <Button onClick={onSignIn}>Gett in</Button>
             <Button size="small" onClick={onSignUp}>Gett new Account</Button>
         </FormWrapper>
     )
