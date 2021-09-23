@@ -1,7 +1,7 @@
 export enum ROUTES {
     login = "/",
     signup = "/signup",
-    addRide = "/addRide",
+    myRides = "/myRides",
     rideById = "/ride:id"
 }
 
